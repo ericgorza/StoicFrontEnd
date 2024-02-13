@@ -4,6 +4,8 @@ import React from 'react'
 import Image from 'next/image';
 import styles from './card.module.css'
 import { useState } from 'react';
+import { useEffect } from 'react';
+import { Suspense } from 'react';
 
 import philosopherData from '../../config.json'
 
@@ -37,10 +39,17 @@ const Card = () => {
             changeStates(counter)
     }}
 
+    useEffect(() =>{
+        changeStates(0)
+        setCounter(counter + 1);
+    },[])
+
 
 
   return (
     <main className="main-page">
+        {/* <Suspense fallback={<h1>Loading...</h1>}> */}
+        {mainName.length > 0 && mainInfo.length > 0 && message.length > 0?
             <div className={styles.cardContainer}>
                 <div className={styles.textContainer}>
                     <h1 className={styles.mainName}>{mainName}</h1>
@@ -60,6 +69,12 @@ const Card = () => {
                     />
                 </div>
             </div>
+        :
+            <div className={styles.cardContainer}>
+                <h1>Loading...</h1>
+            </div>
+            }
+        {/* </Suspense> */}
             <div className={styles.buttonContainer}>
                     <button className={styles.button} onClick={handleClick}>
                         <span className="buttonSpan">Button</span>
