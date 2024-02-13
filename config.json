@@ -1,0 +1,32 @@
+{
+    "philosophers": [
+      {
+        "name": "Seneca",
+        "date": "12/08/1618",
+        "location": "Greece",
+        "img_url": "url",
+        "message": "I love Greece so much I want to live there forever.I love Greece so much I want to live there forever.I love Greece so much I want to live there forever.I love Greece so much I want to live there forever."
+      },
+      {
+        "name": "Torettos",
+        "date": "12/08/1618",
+        "location": "Greece",
+        "img_url": "url",
+        "message": "I love LA so much I want to live there forever."
+      },
+      {
+        "name": "Sonettos",
+        "date": "12/08/1618",
+        "location": "Greece",
+        "img_url": "url",
+        "message": "I love Rome so much I want to live there forever."
+      },
+      {
+        "name": "Cloretos",
+        "date": "12/08/1618",
+        "location": "Greece",
+        "img_url": "url",
+        "message": "I love Bariloche so much I want to live there forever."
+      }
+    ]
+  }

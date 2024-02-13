@@ -1,16 +1,18 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "./components/header";
+import Card from "./components/card";
+import Footer from "./components/footer";
 
+import "./page.css";
 
 export default function Page() {
     return (
     <div>
-        <main>
-            <h1>Bem-vindo ao Meu Aplicativo Next.js</h1>
-            {/* Conteúdo adicional */}
-        </main>
-            <footer>
-            {/* Rodapé */}
-            </footer>
-  </div>
+        <Header />
+        <Card />
+        <Footer />
+    </div>
 );
 }

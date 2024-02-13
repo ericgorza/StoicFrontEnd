@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
+import "./global.css";
 
 export const metadata: Metadata = {
-  title: 'Stoic App',
+  title: 'Your daily stoic motivational website.',
   description: 'The official stoic web to help you with your life.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };

@@ -1,0 +1,14 @@
+:root {
+    --bg-color:#E7DFD8;
+    --text-color:#231F20;
+    --text-font:
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 40px;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}

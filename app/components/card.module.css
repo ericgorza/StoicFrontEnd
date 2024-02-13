@@ -1,0 +1,68 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 700px;
+    border: solid .5px var(--text-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 15px;
+}
+
+.mainName {
+    font-size: 38.6px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.mainInfo {
+    font-size: 12.5px;
+    font-weight: 200;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.messageContainer {
+    display: flex;
+    max-width: 80%;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 11.5px;
+    font-weight: 200;
+    font-style: italic;
+
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    height: 2em;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--text-color);
+    color: var(--bg-color)
+}
