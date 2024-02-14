@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from 'next/link';
 import styles from "./footer.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image';
+import instagram from "./icons/logo-instagram.svg"
+import github from "./icons/logo-github.svg"
+import linkdin from "./icons/logo-linkedin.svg"
 
 
 const Footer = () => {
@@ -12,9 +14,30 @@ const Footer = () => {
             <span className={styles.span}>By Eric Gorza</span>
         {/* </div> */}
         {/* // <div className={styles.linkContainer}> */}
-            <Link href={""} className={styles.link}>Insta</Link>
-            <Link href={""} className={styles.link}>Face</Link>
-            <Link href={""} className={styles.link}>LinkdIn</Link>
+            <Link href={"https://www.instagram.com/ericgorza/"} className={styles.link}>
+              <Image
+                src={instagram}
+                alt="instagramLogo"
+                width={20}
+                height={20}
+              />
+            </Link>
+            <Link href={"https://github.com/ericgorza"} className={styles.link}>
+              <Image
+                  src={github}
+                  alt="gitLogo"
+                  width={20}
+                  height={20}
+              />
+            </Link>
+            <Link href={"https://www.linkedin.com/in/eric-pires-gorza-a164b7191/"} className={styles.link}>
+              <Image
+                src={linkdin}
+                alt="linkdinLogo"
+                width={20}
+                height={20}
+              />
+            </Link>
         {/* </div> */}
     </footer>
   )

@@ -1,5 +1,12 @@
 import { Metadata } from 'next';
 import "./global.css";
+import { Magra } from 'next/font/google'
+
+const magra = Magra({
+  subsets:['latin'],
+  weight:'400',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Your daily stoic motivational website.',
@@ -13,7 +20,7 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
-      <html lang="en">
+      <html lang="en" className={magra.className}>
         <body>{children}</body>
       </html>
     )

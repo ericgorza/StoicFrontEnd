@@ -12,3 +12,30 @@
     justify-content: center;
     align-items: center;
 }
+
+.headerh1 {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+.headerh1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    cursor: pointer;
+    transition: width 0.6s ease;
+  }
+
+.headerh1:hover::before {
+    width: 100%;
+  }
+
+/* .headerh1:hover {
+    color: #007bff;
+  } */

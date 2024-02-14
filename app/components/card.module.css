@@ -1,8 +1,23 @@
 .cardContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
+    min-width: 700px;
     max-width: 700px;
+    border: solid .5px var(--text-color);
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardContainerLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 100px;
+    max-height: 100px;
     border: solid .5px var(--text-color);
     padding: 10px;
     margin-bottom: 30px;
@@ -13,6 +28,17 @@
     flex-direction: column;
     text-align: left;
     padding: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
 }
 
 .mainName {
@@ -25,7 +51,7 @@
     font-size: 12.5px;
     font-weight: 200;
     font-style: italic;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .messageContainer {
@@ -44,6 +70,12 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    margin-right: 10%;
+}
+
+.img {
+    box-shadow: -8px -8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
 }
 
 .buttonContainer {
@@ -52,6 +84,7 @@
     align-items: center;
     margin-bottom: 20px;
 }
+
 
 .button {
     display: flex;
@@ -63,10 +96,13 @@
     border: none;
     border-radius: 8px;
     background-color: var(--text-color);
+    font-size: 12px;
     color: var(--bg-color);
     transition: 0.2s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover{
     opacity: 0.7;
+    cursor: pointer;
 }

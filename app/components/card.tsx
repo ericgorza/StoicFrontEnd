@@ -6,6 +6,7 @@ import styles from './card.module.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Suspense } from 'react';
+import testImg from './images/Test.jpg'
 
 import philosopherData from '../../config.json'
 
@@ -48,7 +49,6 @@ const Card = () => {
 
   return (
     <main className="main-page">
-        {/* <Suspense fallback={<h1>Loading...</h1>}> */}
         {mainName.length > 0 && mainInfo.length > 0 && message.length > 0?
             <div className={styles.cardContainer}>
                 <div className={styles.textContainer}>
@@ -62,22 +62,23 @@ const Card = () => {
                 </div>
                 <div className={styles.imgContainer}>
                     <Image
-                        src=""
+                        src={testImg}
                         alt="Descrição da imagem"
-                        width={100}
-                        height={100}
+                        width={150}
+                        height={150}
+                        className={styles.img}
                     />
                 </div>
             </div>
         :
-            <div className={styles.cardContainer}>
+            <div className={styles.cardContainerLoading}>
                 <h1>Loading...</h1>
             </div>
             }
         {/* </Suspense> */}
             <div className={styles.buttonContainer}>
                     <button className={styles.button} onClick={handleClick}>
-                        <span className="buttonSpan">Button</span>
+                        <span className="buttonSpan">Next</span>
                     </button>
             </div>
         </main>

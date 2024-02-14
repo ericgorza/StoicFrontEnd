@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
         <div className={styles.headerContainer}>
-            <h1 className="header-h1">Your daily stoic app</h1>
+            <h1 className={styles.headerh1}>Your daily stoic app</h1>
         </div>
     </header>
   )
