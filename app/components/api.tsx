@@ -1,11 +1,5 @@
 "use client"
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Header from "./components/header";
-import Card from "./components/card";
-import Footer from "./components/footer";
-import Api from "./components/api";
+import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -15,9 +9,7 @@ const URL_PICTURES = "http://127.0.0.1:8000/pictures/"
 
 
 
-import "./page.css";
-
-export default function Page() {
+const Api = () => {
 
     const [dados, setDados] = useState([])
     const [phrases, setPhrases] = useState([])
@@ -67,15 +59,22 @@ export default function Page() {
     }, [dados,phrases,images])
 
 
-
-    return (
+  return (
     <div>
-        <Header />
-        <Card filosofo={dict}/>
-        <Footer />
-        {/* <div style={{width:"400px"}}>
-            <Api />
-        </div> */}
+        <div>
+            <h1>Dados renderizados</h1>
+        </div>
+            {dict.map((index) => (
+                <div>
+                    <p>{index.name}</p>
+                    <p>{index.location}</p>
+                    <p>{index.frases.map((frase) => (<p>{frase}</p>))}</p>
+                    <p>{index.img.map((image)=> (<p>{image}</p>))}</p>
+                </div>
+            ) )}
     </div>
-);
+
+  )
 }
+
+export default Api;

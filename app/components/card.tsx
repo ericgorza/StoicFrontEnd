@@ -15,7 +15,7 @@ const philosophers = philosopherData.philosophers;
 
 // const randomPhilosopher = philosophers[randomIndex]
 
-const Card = () => {
+const Card = (props) => {
 
     const [mainName, setMainName] = useState("")
     const [mainInfo, setMainInfo] = useState("")

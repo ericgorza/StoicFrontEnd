@@ -1,0 +1,18 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 15px;
+    align-items: left;
+    margin-bottom: 20px;
+}
