@@ -41,6 +41,19 @@
     }
 }
 
+/* .fadeIn {
+    animation: fadeInAnimation 1s ease-in-out;
+  }
+
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+
 .mainName {
     font-size: 38.6px;
     font-weight: bold;
