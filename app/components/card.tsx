@@ -21,23 +21,23 @@ const Card = () => {
 
     //Definir os estados que usaremos
 
-    // const [mainName, setMainName] = useState("")
-    // const [mainInfo, setMainInfo] = useState("")
-    // const [message, setMessage] = useState("")
     const [imgemFilosofo, setImagemFilosofo] = useState("")
     const [counter, setCounter] = useState(0)
     const [imgCounter, setImgCounter] = useState(0)
     const [phraseCounter, setPhraseCounter] = useState(0)
 
-    //Criar o estado para CSS Fade In:
-    // const [fadeIn, setFadeIn] = useState(false);
+    // Logica do Fade In:
 
-    // const changeStates = () => {
-    //     setFadeIn(false); // Ative o efeito fadeIn
-    //     setTimeout(() => {
-    //       setFadeIn(true); // Desative o efeito fadeIn após algum tempo (ajuste conforme necessário)
-    //     }, 1000); // Tempo em milissegundos, ajuste conforme necessário
-    //   };
+    const [fadeIn, setFadeIn] = useState(false);
+
+    const changeStates = () => {
+        setFadeIn(true);
+
+        setTimeout(() => {
+          setFadeIn(false);
+        }, 500);
+      };
+
 
     //Fazer o fetch na API
 
@@ -89,24 +89,6 @@ const Card = () => {
         }
     }, [dados,phrases,images])
 
-// Descomente se voce quiser utilizar a fake API:
-
-    // const changeStates = (counter) => {
-    //     setMainName(philosophers[counter]['name']);
-    //     setMainInfo(philosophers[counter]['date']);
-    //     setMessage(philosophers[counter]['message']);
-    // }
-
-// Descomente se voce quiser utilizar a API Django:
-
-//     const changeStates = (counter) => {
-//         if(dict[counter]){
-//             // setMainName(dict[counter].nomeFilosofo);
-//             // setMainInfo(dict[counter].locationFilosofo);
-//             // setMessage(dict[counter].frasesFilosofo[phraseCounter]);
-//             setImagemFilosofo(dict[counter].imagemFilosofo[imgCounter]);
-
-// }}
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -117,24 +99,22 @@ const Card = () => {
 
         setImgCounter(randomImgIndex)
         setPhraseCounter(randomPhraseIndex)
-        // changeStates()
+
 
         console.log("Img Counter: ", imgCounter)
         console.log("Phrase Counter: ", phraseCounter)
 
         if(counter >= (dict.length - 1)){
             setCounter(0)
-            // changeStates(counter)
+            changeStates()
         } else {
             setCounter(counter + 1);
-            // changeStates(counter)
+            changeStates()
     }}
 
     useEffect(() =>{
-        // changeStates(0)
         setCounter(counter + 1);
-        // setImgCounter(imgCounter + 1)
-        // setPhraseCounter(phraseCounter + 1)
+        changeStates()
     },[])
 
 
@@ -143,12 +123,12 @@ const Card = () => {
     <main className="main-page">
         {dict[counter]?
             <div className={styles.cardContainer}>
-                <div className={styles.textContainer}>
+                <div className={`${styles.textContainer} ${fadeIn && styles.fadeIn}`}>
                     <h1 className={styles.mainName}>{dict[counter].nomeFilosofo}</h1>
                     <p className={styles.mainInfo}>{dict[counter].locationFilosofo}</p>
                     <div className={styles.messageContainer}>
                         <p className={styles.mainMessage}>
-                            {dict[counter].frasesFilosofo[phraseCounter]}
+                            {`"${dict[counter].frasesFilosofo[phraseCounter]}"`}
                         </p>
                     </div>
                 </div>
